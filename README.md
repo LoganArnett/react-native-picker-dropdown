@@ -58,6 +58,26 @@ export default class App extends Component {
 }
 ```
 
+## Options
+If you would like to hide the arrow on your dropdown you can pass the `hideArrow` prop:
+```js
+<Picker
+  selectedValue={this.state.language}
+  onValueChange={(language) => this.setState({language})}
+  mode="modal"
+  hideArrow
+  style={{
+    alignSelf: 'stretch',
+    color: 'black',
+  }}
+>
+  <Picker.Item label="JavaScript" value="js" />
+  <Picker.Item label="Ruby" value="ruby" />
+  <Picker.Item label="Python" value="python" />
+  <Picker.Item label="Elm" value="elm" />
+</Picker>
+```
+
 ## Contributing
 
 Please create issues and send pull requests!

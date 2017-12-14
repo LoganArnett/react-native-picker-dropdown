@@ -22,7 +22,7 @@ export default class Picker extends Component {
   }
 
   render() {
-    const { children, style } = this.props
+    const { children, style, hideArrow } = this.props
     const labels = children.map(child => child.props.label)
     const values = children.map(child => child.props.value)
     const flatStyle = (style ? StyleSheet.flatten(style) : {})
@@ -50,7 +50,7 @@ export default class Picker extends Component {
           }, textStyle, style]}>
             {labels[values.indexOf(selectedValue)]}
           </Text>
-          <Text style={[textStyle, style, {color: 'black'}]}>▼</Text>
+          {hideArrow ? null : <Text style={[textStyle, style, {color: 'black'}]}>▼</Text>}
         </TouchableOpacity>
       )
     } else {
